@@ -1,0 +1,59 @@
+<nav>
+  <span class="navbar-brand mb-0 h1"><img src="/assets/img/burger_sign.jpg"></span>
+</nav>
+
+<div class= "row">
+    <div class= "col-6">
+        <h2>Burgers that need to be devoured</h2>
+
+        <ul>
+            {{#each burgers}}
+                {{#unless devoured}}
+                    <li>
+                        <div class="myDiner card" style="width: 18rem;">
+                            <img src="/assets/img/burger.jpg" class="card-img-top" style="margin-left:30%;height:45%;width:40%" alt="delicious burger">
+                            <div class="card-body">
+                                <p class="card-text">{{burger_name}}</p>
+                            </div>
+                            <button class= "myDiner devoured-change" data-id= "{{id}}" data-newdev= "{{devoured}}">
+                                DEVOUR!
+                            </button>
+                        </div>
+                    </li>
+                {{/unless}}
+            {{/each}}
+        </ul>
+    </div>
+    <div class="col-6">
+        <h2>Burgers that have been devoured</h2>
+
+        <ul>
+            {{#each burgers}}
+                {{#if devoured}}
+                    <li>
+                    <div class="myDiner card" style="width: 18rem;">
+                            <img src="/assets/img/burger.jpg" class="card-img-top" style="margin-left:30%;height:45%;width:40%" alt="delicious burger">
+                            <div class="card-body">
+                                <p class="card-text">{{burger_name}}</p>
+                            </div>
+                        </div>
+                    </li>
+                {{/if}}
+            {{/each}}
+        </ul>
+    </div>
+</div>
+<div class="row">
+    <div class= "col-3"></div>
+    <div class="col-6">
+        <h2>Add a burger of your choice</h2>
+        <form>
+        <div class="form-group">
+            <label for="burgerName">What kind of burger?</label>
+            <input class="form-control" id="burgerName" aria-describedby="emailHelp" placeholder="Order here">
+        </div>
+        <button type="submit" id="submitBtn" class="btn myDiner">Submit</button>
+        </form>
+    </div>
+    <div class= "col-3"></div>
+</div>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>All You Can Eat Burgers</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Cherry+Cream+Soda" rel="stylesheet">
+        <link rel="stylesheet" href="/assets/css/burger_style.css" type="text/css" />
+    </head>
+    <body>
+        {{{body}}}
+        <script>
+            $(".devoured-change").on("click", function(e){
+                e.preventDefault();
+                const id = $(this).data("id");
+
+                const newlyDev = {
+                    devoured: true
+                };
+
+                $.ajax("/api/burgers/" + id, {
+                    type: "PUT",
+                    data: newlyDev
+                }).then(()=>{
+                    location.reload();
+                });
+            });
+            $("#submitBtn").on("click", function(e){
+                e.preventDefault();
+                const addBurger= $("#burgerName").val().trim();
+                console.log(addBurger);
+                const newBurger = {
+                    burger_name:addBurger,
+                    devoured: 0
+                };
+                $.ajax("/api/burgers", {
+                    type: "POST",
+                    data: newBurger
+                }).then(()=>{
+                    location.reload();
+                });
+            });
+        </script>
+    </body>
+</html>

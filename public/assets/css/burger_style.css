@@ -1,0 +1,26 @@
+li {
+    list-style-type: none;
+    margin: 2%;
+}
+body{
+    background-image: url("../img/diagonal-squares.png");
+}
+.myDiner {
+    background-color: #C21807;
+    font-family: 'Cherry Cream Soda', cursive;
+    color:white;
+}
+p {
+    text-align: center;
+}
+nav {
+    background-color: black;
+    text-align: center;
+}
+h2 {
+    color:  #C21807;
+    font-family: 'Cherry Cream Soda', cursive;
+    padding:2%;
+    margin-top:5%;
+    text-shadow: 2px 2px 4px white;
+}

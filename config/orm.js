@@ -1,4 +1,4 @@
-const connection = require("./connection");
+const connection = require("./config.json");
 
 function objToSql(ob) {
     const arr = [];

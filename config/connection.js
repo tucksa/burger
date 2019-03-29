@@ -2,7 +2,7 @@ const mysql = require("mysql");
 var connection;
 
  if(process.env.NODE_ENV){
-    connection=mysql.createConnection({process.env.NODE_ENV})
+    connection=mysql.createConnection(process.env.NODE_ENV)
  }else{
      connection = mysql.createConnection({
         port: 3306,
